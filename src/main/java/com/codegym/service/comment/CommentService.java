@@ -29,4 +29,14 @@ public class CommentService implements ICommentService {
     public void remove(Long id) {
         commentRepository.remove(id);
     }
+
+    @Override
+    public void addLike(Comment comment) {
+        commentRepository.addLike(comment);
+    }
+
+    @Override
+    public void disLike(Comment comment) {
+        commentRepository.disLike(comment);
+    }
 }

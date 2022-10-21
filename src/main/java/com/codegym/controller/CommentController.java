@@ -34,14 +34,14 @@ public class CommentController {
     @GetMapping("/likeComment/{id}")
     public String like(@PathVariable Long id){
         Comment comment=commentService.findById(id);
-//        commentService.addLike(comment);
+        commentService.addLike(comment);
         return "redirect:/start";
     }
 
     @GetMapping("/dislikeComment/{id}")
     public String dislike(@PathVariable Long id){
         Comment comment=commentService.findById(id);
-//        commentService.disLike(comment);
+        commentService.disLike(comment);
         return "redirect:/start";
     }
 }

@@ -46,4 +46,16 @@ public class CommentRepository implements ICommentRepository {
             em.remove(model);
         }
     }
+
+    @Override
+    public void addLike(Comment model){
+        model.setLikes(model.getLikes() + 1);
+        em.merge(model);
+    }
+
+    @Override
+    public void disLike(Comment model){
+        model.setLikes(model.getLikes() - 1);
+        em.merge(model);
+    }
 }
